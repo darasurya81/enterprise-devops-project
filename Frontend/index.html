@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Manager</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #eef2f3, #dfe9f3);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background: #ffffff;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #444;
+            margin-top: 25px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        input {
+            width: 48%;
+            padding: 10px;
+            margin: 10px 1% 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 4px rgba(0,123,255,0.4);
+        }
+
+        button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 12px;
+            background: #f9f9f9;
+            margin-top: 8px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        li i {
+            color: #007bff;
+        }
+
+        #health {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .status-ok {
+            color: green;
+        }
+
+        .status-bad {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1><i class="fa-solid fa-users"></i> Employee Manager</h1>
+
+    <div class="section">
+        <h2><i class="fa-solid fa-user-plus"></i> Add Employee</h2>
+        <input id="name" placeholder="Name">
+        <input id="role" placeholder="Role">
+        <br>
+        <button onclick="addEmployee()">
+            <i class="fa-solid fa-plus"></i> Add
+        </button>
+    </div>
+
+    <div class="section">
+        <h2><i class="fa-solid fa-list"></i> Employees</h2>
+        <button onclick="fetchEmployees()">
+            <i class="fa-solid fa-rotate"></i> Refresh
+        </button>
+        <ul id="list"></ul>
+    </div>
+
+    <div class="section">
+        <h2><i class="fa-solid fa-heart-pulse"></i> Health Check</h2>
+        <button onclick="checkHealth()">
+            <i class="fa-solid fa-stethoscope"></i> Check
+        </button>
+        <p id="health"></p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
