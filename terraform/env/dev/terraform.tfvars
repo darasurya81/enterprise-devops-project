@@ -1,0 +1,8 @@
+env                  = "dev"
+cidr                 = "10.0.0.0/24"
+vpc_tag              = "walwil_vpc"
+public_subnet_cidr   = "10.0.0.0/25"
+public_subnet_tag    = "walwil_public"
+private_subnet_cidr  = "10.0.0.128/25"
+private_subnet_tag   = "walwil_private"
+internet_gateway_tag = "walwil_igw"
